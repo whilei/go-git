@@ -72,11 +72,8 @@ func (d *doubleIter) nextBoth() error {
 	if err := d.nextFrom(); err != nil {
 		return err
 	}
-	if err := d.nextTo(); err != nil {
-		return err
-	}
 
-	return nil
+	return d.nextTo()
 }
 
 // NextFrom makes d advance to the next noder in the "from" merkletrie,
