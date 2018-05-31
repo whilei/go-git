@@ -113,10 +113,8 @@ func (s *Signature) Encode(w io.Writer) error {
 	if _, err := fmt.Fprintf(w, "%s <%s> ", s.Name, s.Email); err != nil {
 		return err
 	}
-	if err := s.encodeTimeAndTimeZone(w); err != nil {
-		return err
-	}
-	return nil
+
+	return s.encodeTimeAndTimeZone(w)
 }
 
 var timeZoneLength = 5
